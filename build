@@ -1,0 +1,17 @@
+#!/bin/bash
+
+## Die on any error
+#
+set -e
+
+## Insure execution occur within base directory of this repos
+#
+SCRIPT_PATH=$(dirname $(readlink -f $0))
+DOCKER_NAME=$(basename $SCRIPT_PATH)
+
+## Build without cache if requested
+#
+[ "a$1" == "aforce" ] && set -- --no-cache=true
+
+set -x
+docker build $1 --rm=true -t $DOCKER_NAME .
