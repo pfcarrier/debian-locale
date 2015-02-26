@@ -20,3 +20,7 @@ The suggested workaround from CircleCI is to create a separate image with the lo
 ## License
 
 MIT license.
+
+## Credit
+
+https://github.com/abevoelker/docker-ubuntu-locale
